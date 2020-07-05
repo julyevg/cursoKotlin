@@ -1,6 +1,7 @@
 package com.example.kotlin_final
 
 import android.os.Bundle
+import android.util.Log
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
@@ -34,5 +35,29 @@ class MainActivity : AppCompatActivity() {
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)
         }
+    }
+    override fun onStart() {
+        super.onStart()
+        Log.d("Estado", "onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("Estado", "onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("Estado", "onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("Estado", "onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("Estado", "onDestroy")
     }
 }
