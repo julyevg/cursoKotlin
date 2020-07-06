@@ -9,5 +9,5 @@ class PostReponse(
     val body: String,
     val image: String,
     val likes: Int,
-    val comment: Comment
+    val comment: Any
 )

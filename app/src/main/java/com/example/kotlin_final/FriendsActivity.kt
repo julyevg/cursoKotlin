@@ -76,6 +76,7 @@ class FriendsActivity: AppCompatActivity(), FriendsAdapter.FriendsHolder.OnAdapt
 
     override fun onItemClickListener(item: FriendsResponse) {
         TODO("Not yet implemented")
+        Log.d(" click", "${item}")
     }
 
 fun gsonGuardar(itemFriends:  List<FriendsResponse>)
@@ -123,24 +124,7 @@ fun gsonGuardar(itemFriends:  List<FriendsResponse>)
     }
 
 
-    fun mostrarUSers()
-    {
-        val mShared = mSharedPreferences(this)
-        val isFriends : String ? = mShared.getKey("friends")
-        Toast.makeText(this@FriendsActivity, "hola", Toast.LENGTH_LONG).show()
-        // val friends : FriendsResponse = Gson().fromJson(postString, FriendsResponse::class.java)
 
-      /*  if (isFriends != null) {
-            val friends : FriendsResponse = Gson().fromJson(isFriends, FriendsResponse::class.java)
-
-            Toast.makeText(this@FriendsActivity, "hola", Toast.LENGTH_LONG).show()
-            /*tv_friends_name.setOnClickListener { view ->
-                val phone = tv_friends_phone.text
-                startActivity(Intent(Intent.ACTION_CALL, Uri.parse(phone.toString())))
-                Toast.makeText(this@FriendsActivity, "telefono: phone", Toast.LENGTH_LONG).show()
-            }*/
-        }*/
-    }
 
 
 }

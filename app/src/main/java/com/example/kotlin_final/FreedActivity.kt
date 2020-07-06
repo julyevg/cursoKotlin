@@ -1,6 +1,7 @@
 package com.example.kotlin_final
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -34,8 +35,6 @@ class FreedActivity : AppCompatActivity(), PostAdapter.PostHolder.OnAdapterListe
         postRecyclerView.adapter = adapter
         callService()
 
-
-
     }
 
     private fun callService() {
@@ -46,11 +45,7 @@ class FreedActivity : AppCompatActivity(), PostAdapter.PostHolder.OnAdapterListe
                 try {
                     if(response.isSuccessful) {
                         val posts : List<PostReponse>?  = response.body()
-                        if( posts != null)
-                        {
-                            updateInfo(posts)
-                            gsonGuardar(posts)
-                        }
+                        if( posts != null) updateInfo(posts)
 
                     }else{
                         Toast.makeText(this@FreedActivity, "Error ${response.code()}", Toast.LENGTH_LONG).show()
@@ -75,14 +70,14 @@ class FreedActivity : AppCompatActivity(), PostAdapter.PostHolder.OnAdapterListe
 
         for (item in itemFreed)
         {
-                val comment: Comment = Comment(
-                    item.comment.username.toString(),
+            /*    val comment: Comment = Comment(
+                 /*   item.comment.username.toString(),
                     item.comment.user_image.toString(),
-                    item.comment.comment.toString()
+                    item.comment.comment.toString()*/
                 )
                 val gsonComment = Gson().toJson(comment, FriendsResponse::class.java)
                 mShared.put("friends", gsonComment)
-                mShared.save()
+                mShared.save()*/
         }
     }
 }
