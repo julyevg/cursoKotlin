@@ -1,6 +1,8 @@
-package com.example.cursokotlin2.network
+package com.example.kotlin_final.network
 
-import com.example.cursokotlin2.models.UserResponse
+import com.example.kotlin_final.models.FriendsResponse
+import com.example.kotlin_final.models.PostReponse
+import com.example.kotlin_final.models.UserResponse
 import retrofit2.Response
 import retrofit2.http.GET
 
@@ -9,4 +11,6 @@ interface Service {
     suspend fun getProfile() :Response<UserResponse>
     @GET("posts")
     suspend fun getPosts(): Response<List<PostReponse>>
+    @GET("users")
+    suspend fun getUsers(): Response<List<FriendsResponse>>
 }

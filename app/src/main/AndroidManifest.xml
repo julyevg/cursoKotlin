@@ -3,6 +3,7 @@
     package="com.example.kotlin_final">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:allowBackup="true"
@@ -12,12 +13,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity_main"
-            android:label="@string/title_activity_main"
+            android:name=".CommentsActivity"
+            android:label="@string/title_activity_comments"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
+            android:name=".FriendsActivity"
+            android:label="@string/title_activity_friends"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FreedActivity"
+            android:label="@string/title_activity_freed"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".FormularioActivity"
-            android:label="@string/title_activity_formulario"
+            android:label="@string/action_settings"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"

@@ -10,7 +10,7 @@ class mSharedPreferences {
 
     constructor(context: Context) {
         this.context = context
-        this.sharedPreferences = context.getSharedPreferences("CURSO_KOTLIN", Context.MODE_PRIVATE)
+        this.sharedPreferences = context.getSharedPreferences("KOTLIN", Context.MODE_PRIVATE)
         this.editor = this.sharedPreferences.edit()
     }
     fun put(key:String, value : String) {
