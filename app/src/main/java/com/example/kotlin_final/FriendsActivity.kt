@@ -75,8 +75,11 @@ class FriendsActivity: AppCompatActivity(), FriendsAdapter.FriendsHolder.OnAdapt
     }
 
     override fun onItemClickListener(item: FriendsResponse) {
-        TODO("Not yet implemented")
-        Log.d(" click", "${item}")
+        val intent = Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", item.phone, null));
+        startActivity(intent);
+
+        Toast.makeText(this, "Llamando a "+String.format("%s %s", item.name, item.lastname), Toast.LENGTH_LONG).show()
+
     }
 
 fun gsonGuardar(itemFriends:  List<FriendsResponse>)
@@ -112,12 +115,8 @@ fun gsonGuardar(itemFriends:  List<FriendsResponse>)
             Log.d(" name", "${userfriends.name}")
             if(userfriends.name != null)
             {
-                Toast.makeText(this@FriendsActivity, "hola ${userfriends.phone}", Toast.LENGTH_LONG).show()
-                /* tv_friends_name.setOnClickListener {view ->
-                    val phoneNo: String = tv_friends_phone.getText().toString()
-                    Toast.makeText(this@FriendsActivity, "hola ${phoneNo}", Toast.LENGTH_LONG).show()
-                    startActivity(Intent(Intent.ACTION_CALL, Uri.parse(phoneNo)))
-                    }*/
+                //Toast.makeText(this@FriendsActivity, "hola ${userfriends.phone}", Toast.LENGTH_LONG).show()
+
             }
         }
 

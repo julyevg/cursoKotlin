@@ -1,5 +1,6 @@
 package com.example.kotlin_final
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -62,6 +63,11 @@ class FreedActivity : AppCompatActivity(), PostAdapter.PostHolder.OnAdapterListe
 
     override fun onItemClickListener(item: PostReponse) {
 
+        val intent = Intent(this, Comment::class.java)
+        //val user : Comment = Comment(item.comment.u, password, dni, nombre, apellido, direccion)
+        intent.putExtra("post",Gson().toJson(item, PostReponse::class.java))
+        startActivity(intent)
+
     }
 
     fun gsonGuardar(itemFreed:  List<PostReponse>)
@@ -70,14 +76,7 @@ class FreedActivity : AppCompatActivity(), PostAdapter.PostHolder.OnAdapterListe
 
         for (item in itemFreed)
         {
-            /*    val comment: Comment = Comment(
-                 /*   item.comment.username.toString(),
-                    item.comment.user_image.toString(),
-                    item.comment.comment.toString()*/
-                )
-                val gsonComment = Gson().toJson(comment, FriendsResponse::class.java)
-                mShared.put("friends", gsonComment)
-                mShared.save()*/
+
         }
     }
 }

@@ -39,6 +39,7 @@ class FriendsAdapter(private var data: List<FriendsResponse>, private val listen
                 .load(friends.image)
                 .into(holder.itemView.photo_friends)
         }
+        holder.itemView.setOnClickListener { listener.onItemClickListener(friends) }
 
     }
 
